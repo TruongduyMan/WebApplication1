@@ -1,0 +1,13 @@
+D:\WebApplication1\DTO\bin\Debug\net8.0\DataAccessLayer.deps.json
+D:\WebApplication1\DTO\bin\Debug\net8.0\DataAccessLayer.dll
+D:\WebApplication1\DTO\bin\Debug\net8.0\DataAccessLayer.pdb
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.AssemblyInfo.cs
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.dll
+D:\WebApplication1\DTO\obj\Debug\net8.0\refint\DataAccessLayer.dll
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.pdb
+D:\WebApplication1\DTO\obj\Debug\net8.0\ref\DataAccessLayer.dll
+D:\WebApplication1\DTO\obj\Debug\net8.0\DataAccessLayer.sourcelink.json
