@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<SectionDTO> AddSectionAsync(SectionDTO section)
+        public Task<SectionEntity> AddSectionAsync(SectionEntity section)
         {
             throw new NotImplementedException();
         }
@@ -28,17 +28,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public Task<SectionDTO> GetaAllSectionByIDAsync(int id)
+        public Task<SectionEntity> GetaAllSectionByIDAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<SectionDTO>> GetAllSectionAsync()
+        public async Task<IEnumerable<SectionEntity>> GetAllSectionAsync()
         {
             return await _dbContext.Sections.ToListAsync();
         }
 
-        public Task UpdateSectionAsync(SectionDTO section)
+        public Task UpdateSectionAsync(SectionEntity section)
         {
             throw new NotImplementedException();
         }

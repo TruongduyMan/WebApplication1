@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class PaymentDTO
+    public class PaymentEntity
     {
         [Key]
         [Column("id")]
@@ -17,7 +17,7 @@ namespace DataAccessLayer.ModelsDTO
         [Required]
         public string Provider {  get; set; }
         public int AccountNo {  get; set; }
-        public OrderDTO order { get; set; }
+        public OrderEntity order { get; set; }
 
     }
 }

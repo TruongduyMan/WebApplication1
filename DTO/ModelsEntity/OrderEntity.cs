@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class OrderDTO
+    public class OrderEntity
     {
         [Key]
         [Column("id")]
@@ -11,10 +11,10 @@ namespace DataAccessLayer.ModelsDTO
         [Column("order_date")]
         public DateTime OrderDate { get; set; } = DateTime.Now;
         [Column("product_id")]
-        public ProductDTO product { get; set; }
-        public PaymentDTO payment { get; set; }
+        public ProductEntity product { get; set; }
+        public PaymentEntity payment { get; set; }
         [Column("customer_id")]
-        public CustomerDTO customer { get; set; }
+        public CustomerEntity customer { get; set; }
 
         
     }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Service.Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace Service.Mapper
     {
         public void CreateMap(IMapperConfigurationExpression cfg) {
 
-            cfg.CreateMap<CategoryDTO, Category>().ReverseMap();
+            cfg.CreateMap<CategoryEntity, Category>().ReverseMap();
         }
     }
 }

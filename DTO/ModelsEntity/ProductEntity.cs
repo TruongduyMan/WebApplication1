@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class ProductDTO
+    public class ProductEntity
     {
         [Key]
         [Column("id")]
@@ -17,9 +17,9 @@ namespace DataAccessLayer.ModelsDTO
         [Column("image")]
         public string Image {  get; set; }
         [Column("category_id")]
-        public CategoryDTO category { get; set; }
+        public CategoryEntity category { get; set; }
         [Column("instock_id")]
-        public InstockDTO instock { get; set; }
+        public InstockEntity instock { get; set; }
 
         
     }

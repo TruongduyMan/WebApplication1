@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class DeliveryDTO
+    public class DeliveryEntity
     {
         [Key]
         [Column("id")]
@@ -16,7 +16,7 @@ namespace DataAccessLayer.ModelsDTO
         [Column("status")]
         public string Status { get; set; }
         [Column("product_id")]
-        public ProductDTO Product { get; set; }
+        public ProductEntity Product { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 

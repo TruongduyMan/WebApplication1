@@ -1,13 +1,13 @@
-﻿using DataAccessLayer.ModelsDTO;
+﻿using DataAccessLayer.ModelsEntity;
 
 namespace DataAccessLayer.Interfaces
 {
     public interface ICustomerRepository
     {
-        Task<IEnumerable<CustomerDTO>> GetCustomersAsync();
-        Task<CustomerDTO> GetCustomerByIdAsync(int id);
-        Task<CustomerDTO> AddCustomerAsync(CustomerDTO customer);
-        Task UpdateCustomerAsync(CustomerDTO customer);
+        Task<IEnumerable<CustomerEntity>> GetCustomersAsync();
+        Task<CustomerEntity> GetCustomerByIdAsync(int id);
+        Task<CustomerEntity> AddCustomerAsync(CustomerEntity customer);
+        Task UpdateCustomerAsync(CustomerEntity customer);
         Task DeleleCustomerAsync(int id);
 
     }

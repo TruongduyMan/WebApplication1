@@ -1,13 +1,13 @@
-﻿using DataAccessLayer.ModelsDTO;
+﻿using DataAccessLayer.ModelsEntity;
 
 namespace DataAccessLayer.Interfaces
 {
     public interface IOrderItemRepository
     {
-        Task<IEnumerable<OrderItemDTO>> GetAllOrderItemsAsync();
-        Task<OrderItemDTO> GetOrderItemsByIdAsync(int id);
-        Task<OrderItemDTO> AddOrderItemsAsync(OrderItemDTO orderItems);
-        Task UpdateOrderItemsAsync(OrderItemDTO orderItems);
+        Task<IEnumerable<OrderItemEntity>> GetAllOrderItemsAsync();
+        Task<OrderItemEntity> GetOrderItemsByIdAsync(int id);
+        Task<OrderItemEntity> AddOrderItemsAsync(OrderItemEntity orderItems);
+        Task UpdateOrderItemsAsync(OrderItemEntity orderItems);
         Task DeleteOrderItemsAsync(int id);
     }
 }

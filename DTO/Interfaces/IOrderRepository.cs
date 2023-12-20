@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.ModelsDTO;
+﻿using DataAccessLayer.ModelsEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IOrderRepository
     {
-        Task<IEnumerable<OrderDTO>> GetAllOrdersAsync();
-        Task<OrderDTO> GetOrderByIdAsync(int id);
-        Task<OrderDTO> AddOrderAsync(OrderDTO order);
+        Task<IEnumerable<OrderEntity>> GetAllOrdersAsync();
+        Task<OrderEntity> GetOrderByIdAsync(int id);
+        Task<OrderEntity> AddOrderAsync(OrderEntity order);
         Task DeleteOrderAsync(int id);
-        Task UpdateOrderAsync(OrderDTO order);
+        Task UpdateOrderAsync(OrderEntity order);
     }
 }

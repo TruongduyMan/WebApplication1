@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccessLayer.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
@@ -6,9 +7,18 @@ namespace WebApplication1.Controllers
     [Route("/Customer")]
     public class CustomerController : Controller
     {
+        private readonly ICustomerRepository customerRepository;
+
+        public CustomerController(ICustomerRepository customerRepository)
+        {
+            this.customerRepository = customerRepository;
+        }
+
+        [HttpGet]
         public string GetName()
         {
-            return "Duy Man";
+           var name = customerRepository.GetCustomersAsync().Result;
+           return "seafhsdfj";
         }
     }
 }

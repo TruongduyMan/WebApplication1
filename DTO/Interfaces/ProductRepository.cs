@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Interfaces
@@ -13,7 +13,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<ProductDTO> AddProductAsync(ProductDTO product)
+        public Task<ProductEntity> AddProductAsync(ProductEntity product)
         {
             throw new NotImplementedException();
         }
@@ -23,17 +23,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public Task<ProductDTO> GetByIdAsync(int id)
+        public Task<ProductEntity> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<ProductDTO>> GetProductsAsync()
+        public async Task<IEnumerable<ProductEntity>> GetProductsAsync()
         {
             return await _dbContext.Products.ToListAsync();
         }
 
-        public Task UpdateProductAsync(ProductDTO product)
+        public Task UpdateProductAsync(ProductEntity product)
         {
             throw new NotImplementedException();
         }

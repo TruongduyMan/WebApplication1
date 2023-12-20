@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class ActionAccessDTO
+    public class ActionAccessEntity
     {
         public bool success {  get; set; }
         public string? error {  get; set; }

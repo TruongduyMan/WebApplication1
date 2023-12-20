@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class SectionDTO
+    public class SectionEntity
     {
         [Key]
         [Column("id")]
@@ -16,7 +16,7 @@ namespace DataAccessLayer.ModelsDTO
         [Column("total")]
         public decimal Total {  get; set; }
         [Column("customer_id")]
-        public CustomerDTO customer { get; set; }
+        public CustomerEntity customer { get; set; }
 
         
     }

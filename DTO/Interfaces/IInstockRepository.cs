@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.ModelsDTO;
+﻿using DataAccessLayer.ModelsEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IInstockRepository
     {
-        Task<IEnumerable<InstockDTO>> GetInstocksAsync();
-        Task<InstockDTO> GetInstockByIdAsync(int id);
-        Task<InstockDTO> AddInstockAsync(InstockDTO instock);
-        Task UpdateInstockAsync(InstockDTO instock);
+        Task<IEnumerable<InstockEntity>> GetInstocksAsync();
+        Task<InstockEntity> GetInstockByIdAsync(int id);
+        Task<InstockEntity> AddInstockAsync(InstockEntity instock);
+        Task UpdateInstockAsync(InstockEntity instock);
         Task DeleteInstockAsync(int id);
     }
 }

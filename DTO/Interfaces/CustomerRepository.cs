@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Interfaces
@@ -13,7 +13,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<CustomerDTO> AddCustomerAsync(CustomerDTO customer)
+        public Task<CustomerEntity> AddCustomerAsync(CustomerEntity customer)
         {
             throw new NotImplementedException();
         }
@@ -23,17 +23,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public Task<CustomerDTO> GetCustomerByIdAsync(int id)
+        public Task<CustomerEntity> GetCustomerByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<CustomerDTO>> GetCustomersAsync()
+        public async Task<IEnumerable<CustomerEntity>> GetCustomersAsync()
         {
             return await _dbContext.Customers.ToListAsync();
         }
 
-        public Task UpdateCustomerAsync(CustomerDTO customer)
+        public Task UpdateCustomerAsync(CustomerEntity customer)
         {
             throw new NotImplementedException();
         }

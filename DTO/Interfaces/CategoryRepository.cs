@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Interfaces
@@ -13,7 +13,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task AddCategoryAsync(CategoryDTO category)
+        public Task AddCategoryAsync(CategoryEntity category)
         {
             throw new NotImplementedException();
         }
@@ -23,17 +23,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<CategoryDTO>> GetCategoriesAsync()
+        public async Task<IEnumerable<CategoryEntity>> GetCategoriesAsync()
         {
             return await _dbContext.Categories.ToListAsync();
         }
 
-        public Task<CategoryDTO> GetCategoryByIdAsync(int id)
+        public Task<CategoryEntity> GetCategoryByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCategoryAsync(CategoryDTO category)
+        public Task UpdateCategoryAsync(CategoryEntity category)
         {
             throw new NotImplementedException();
         }

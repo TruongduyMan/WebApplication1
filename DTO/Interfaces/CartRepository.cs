@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<CartDTO> AddCartAsync(CartDTO cart)
+        public Task<CartEntity> AddCartAsync(CartEntity cart)
         {
             throw new NotImplementedException();
         }
@@ -28,17 +28,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public Task<CartDTO> GetCartByIdAsync(int id)
+        public Task<CartEntity> GetCartByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<CartDTO>> GetCartsAsync()
+        public async Task<IEnumerable<CartEntity>> GetCartsAsync()
         {
             return await _dbContext.Carts.ToListAsync();
         }
 
-        public Task UpdateCartAsync(CartDTO cart)
+        public Task UpdateCartAsync(CartEntity cart)
         {
             throw new NotImplementedException();
         }

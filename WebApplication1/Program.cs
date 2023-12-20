@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServe
  ));
 
 // Register auto mapper
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Register repository of Data Accesslayer
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
@@ -54,7 +54,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseRouting();
 
 app.Run();

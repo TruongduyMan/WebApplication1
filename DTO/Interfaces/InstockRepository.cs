@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<InstockDTO> AddInstockAsync(InstockDTO instock)
+        public Task<InstockEntity> AddInstockAsync(InstockEntity instock)
         {
             throw new NotImplementedException();
         }
@@ -28,17 +28,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public Task<InstockDTO> GetInstockByIdAsync(int id)
+        public Task<InstockEntity> GetInstockByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<InstockDTO>> GetInstocksAsync()
+        public async Task<IEnumerable<InstockEntity>> GetInstocksAsync()
         {
             return await _dbContext.Instocks.ToListAsync(); 
         }
 
-        public Task UpdateInstockAsync(InstockDTO instock)
+        public Task UpdateInstockAsync(InstockEntity instock)
         {
             throw new NotImplementedException();
         }

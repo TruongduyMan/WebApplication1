@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Service.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace Service.Mapper
     public class ActionAccessProfile: Profile
     {
         public ActionAccessProfile() { 
-            CreateMap<ActionAccess, ActionAccessDTO>().ReverseMap();
+            CreateMap<ActionAccess, ActionAccessEntity>().ReverseMap();
         }
     }
 }

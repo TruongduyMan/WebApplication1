@@ -1,13 +1,13 @@
-﻿using DataAccessLayer.ModelsDTO;
+﻿using DataAccessLayer.ModelsEntity;
 
 namespace DataAccessLayer.Interfaces
 {
     public interface ICartRepository
     {
-        Task<IEnumerable<CartDTO>> GetCartsAsync();
-        Task<CartDTO> GetCartByIdAsync(int id);
-        Task<CartDTO> AddCartAsync(CartDTO cart);
+        Task<IEnumerable<CartEntity>> GetCartsAsync();
+        Task<CartEntity> GetCartByIdAsync(int id);
+        Task<CartEntity> AddCartAsync(CartEntity cart);
         Task DeleteCartAsync(int id);
-        Task UpdateCartAsync(CartDTO cart);
+        Task UpdateCartAsync(CartEntity cart);
     }
 }

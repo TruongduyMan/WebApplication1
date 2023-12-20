@@ -6,20 +6,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.ModelsDTO
+namespace DataAccessLayer.ModelsEntity
 {
-    public class OrderItemDTO
+    public class CartEntity
     {
         [Key]
         [Column("id")]
-        public int Id { get; set; }
+        public int ID {  get; set; }
+        [Required]
+        [Column("name")]
+        public string Name { get; set; }
+        [Required]
         [Column("quantity")]
         public int Quantity {  get; set; }
-        [Column("order_id")]
-        public OrderDTO order { get; set; }
         [Column("product_id")]
-        public ProductDTO product { get; set; }
+        public ProductEntity product { get; set; }
+        [Column("secction_id")]
+        public SectionEntity section { get; set; }
 
-        
+       
     }
 }

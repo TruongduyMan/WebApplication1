@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.ModelsDTO;
+using DataAccessLayer.ModelsEntity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<OrderItemDTO> AddOrderItemsAsync(OrderItemDTO orderItems)
+        public Task<OrderItemEntity> AddOrderItemsAsync(OrderItemEntity orderItems)
         {
             throw new NotImplementedException();
         }
@@ -28,17 +28,17 @@ namespace DataAccessLayer.Interfaces
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<OrderItemDTO>> GetAllOrderItemsAsync()
+        public async Task<IEnumerable<OrderItemEntity>> GetAllOrderItemsAsync()
         {
             return await _dbContext.OrderItems.ToListAsync();
         }
 
-        public Task<OrderItemDTO> GetOrderItemsByIdAsync(int id)
+        public Task<OrderItemEntity> GetOrderItemsByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateOrderItemsAsync(OrderItemDTO orderItems)
+        public Task UpdateOrderItemsAsync(OrderItemEntity orderItems)
         {
             throw new NotImplementedException();
         }
