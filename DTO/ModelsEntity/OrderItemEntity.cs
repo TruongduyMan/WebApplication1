@@ -16,9 +16,11 @@ namespace DataAccessLayer.ModelsEntity
         [Column("quantity")]
         public int Quantity {  get; set; }
         [Column("order_id")]
-        public OrderEntity order { get; set; }
+        public int ProductId { get; set; }
+        public int OrderId {  get; set; }
+        public ICollection<OrderEntity> Orders { get; set; }
         [Column("product_id")]
-        public ProductEntity product { get; set; }
+        public ICollection<ProductEntity> Products { get; set; }
 
         
     }

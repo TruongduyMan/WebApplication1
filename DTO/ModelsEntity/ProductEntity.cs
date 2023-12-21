@@ -17,10 +17,7 @@ namespace DataAccessLayer.ModelsEntity
         [Column("image")]
         public string Image {  get; set; }
         [Column("category_id")]
-        public CategoryEntity category { get; set; }
-        [Column("instock_id")]
-        public InstockEntity instock { get; set; }
-
+        public ICollection<CategoryEntity> Categories { get; set; }
         
     }
 }
