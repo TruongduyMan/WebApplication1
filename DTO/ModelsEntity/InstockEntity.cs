@@ -16,8 +16,8 @@ namespace DataAccessLayer.ModelsEntity
         [Required]
         [Column("quantity")]
         public int Quantity { get; set; }
-        public DateTime createdAt { get; set; } = DateTime.Now;
-        public DateTime updatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
         
     }

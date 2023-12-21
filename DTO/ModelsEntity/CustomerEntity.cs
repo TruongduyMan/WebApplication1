@@ -21,9 +21,8 @@ namespace DataAccessLayer.ModelsEntity
         [Column("email")]
         public string Email { get; set; }
         
-        public DateTime createdAt {  get; set; }
-        public DateTime modifiedAt { get; set; }
-
+        public DateTime createdAt {  get; set; } = DateTime.Now;
+        public DateTime modifiedAt { get; set; } = DateTime.Now;
         
     }
 }

@@ -18,11 +18,13 @@ namespace DataAccessLayer.ModelsEntity
         public string Name { get; set; }
         [Required]
         [Column("quantity")]
+        public int ProductId {  get; set; }
+        public int SectionId { get; set; }
         public int Quantity {  get; set; }
         [Column("product_id")]
-        public ProductEntity product { get; set; }
+        public ICollection<ProductEntity> Product { get; set; }
         [Column("secction_id")]
-        public SectionEntity section { get; set; }
+        public ICollection<SectionEntity> Section { get; set; }
 
        
     }

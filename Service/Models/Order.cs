@@ -1,15 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Service.Models
 {
     public class Order
     {
         [Key]
+        [Column("id")]
         public int ID { get; set; }
+        [Column("order_date")]
         public DateTime OrderDate { get; set; } = DateTime.Now;
-        public Product product { get; set; }
-        public Payment payment { get; set; }
-        public Customer customer { get; set; }
+        public ICollection<Customer> Customers { get; set; }
 
         
     }
