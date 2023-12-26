@@ -18,29 +18,37 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<OrderItemEntity> AddOrderItemsAsync(OrderItemEntity orderItems)
+        public OrderItemEntity? AddOrderItems(OrderItemEntity orderItems)
         {
-            throw new NotImplementedException();
+            _dbContext.OrderItems.Add(orderItems);
+            _dbContext.SaveChanges();
+            return orderItems;
         }
 
-        public Task DeleteOrderItemsAsync(int id)
+        public void DeleteOrderItems(int id)
         {
-            throw new NotImplementedException();
+            var order = _dbContext.OrderItems.Find(id);
+            if(order != null)
+            {
+                _dbContext.OrderItems.Remove(order!);
+                _dbContext.SaveChanges();
+
+            }
         }
 
-        public async Task<IEnumerable<OrderItemEntity>> GetAllOrderItemsAsync()
+        public List<OrderItemEntity> GetAllOrderItems()
         {
-            return await _dbContext.OrderItems.ToListAsync();
+            return _dbContext.OrderItems.ToList();
         }
 
-        public Task<OrderItemEntity> GetOrderItemsByIdAsync(int id)
+        public OrderItemEntity? GetOrderItemsById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.OrderItems.FirstOrDefault(o => o.Id == id);
         }
 
-        public Task UpdateOrderItemsAsync(OrderItemEntity orderItems)
+        public void UpdateOrderItems(OrderItemEntity orderItems)
         {
-            throw new NotImplementedException();
+            _dbContext.OrderItems.Update(orderItems);
         }
     }
 }

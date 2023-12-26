@@ -11,7 +11,7 @@ namespace DataAccessLayer.ModelsEntity
         [Column("order_date")]
         public DateTime OrderDate { get; set; } = DateTime.Now;
         [Column("customer_id")]
-        public ICollection<CustomerEntity> Customer { get; set; }
+        public CustomerEntity Customer { get; set; }
 
         
     }

@@ -4,10 +4,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface ISectionRepository
     {
-        Task<IEnumerable<SectionEntity>> GetAllSectionAsync();
-        Task<SectionEntity> GetaAllSectionByIDAsync(int id);
-        Task<SectionEntity> AddSectionAsync(SectionEntity section);
-        Task DeleteSectionAsync(int id);
-        Task UpdateSectionAsync(SectionEntity section);
+        public List<SectionEntity> GetAllSection();
+        public SectionEntity? GetaAllSectionByID(int id);
+        public SectionEntity? AddSection(SectionEntity section);
+        void DeleteSection(int id);
+        void UpdateSection(SectionEntity section);
     }
 }

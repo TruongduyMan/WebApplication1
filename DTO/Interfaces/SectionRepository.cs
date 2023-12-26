@@ -18,29 +18,35 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<SectionEntity> AddSectionAsync(SectionEntity section)
+        public SectionEntity? AddSection(SectionEntity section)
         {
-            throw new NotImplementedException();
+            _dbContext.Sections.Add(section);
+            _dbContext.SaveChanges();
+            return section;
         }
 
-        public Task DeleteSectionAsync(int id)
+        public void DeleteSection(int id)
         {
-            throw new NotImplementedException();
+            var section = _dbContext.Sections.Find(id);
+            if(section != null) { 
+                _dbContext.Sections.Remove(section!);
+                _dbContext.SaveChanges();
+            }
         }
 
-        public Task<SectionEntity> GetaAllSectionByIDAsync(int id)
+        public SectionEntity? GetaAllSectionByID(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Sections.FirstOrDefault(s => s.ID == id);    
         }
 
-        public async Task<IEnumerable<SectionEntity>> GetAllSectionAsync()
+        public List<SectionEntity> GetAllSection()
         {
-            return await _dbContext.Sections.ToListAsync();
+            return _dbContext.Sections.ToList();
         }
 
-        public Task UpdateSectionAsync(SectionEntity section)
+        public void UpdateSection(SectionEntity section)
         {
-            throw new NotImplementedException();
+            _dbContext.Sections.Update(section);
         }
     }
 }

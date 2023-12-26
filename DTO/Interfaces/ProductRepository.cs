@@ -13,29 +13,33 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<ProductEntity> AddProductAsync(ProductEntity product)
+        public ProductEntity AddProduct(ProductEntity product)
         {
-            throw new NotImplementedException();
+            _dbContext.Products.Add(product);
+            _dbContext.SaveChanges();
+            return product;
         }
 
-        public Task DeleteProductAsync(int id)
+        public void DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            var product = _dbContext.Products.Find(id);
+            _dbContext.Products.Remove(product!);
         }
 
-        public Task<ProductEntity> GetByIdAsync(int id)
+        public ProductEntity? GetProductById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Products.FirstOrDefault(p => p.ID == id);
+            
         }
 
-        public async Task<IEnumerable<ProductEntity>> GetProductsAsync()
+        public List<ProductEntity> GetProducts()
         {
-            return await _dbContext.Products.ToListAsync();
+            return _dbContext.Products.ToList();
         }
 
-        public Task UpdateProductAsync(ProductEntity product)
+        public void UpdateProduct(ProductEntity product)
         {
-            throw new NotImplementedException();
+            _dbContext.Products.Update(product);
         }
     }
 }

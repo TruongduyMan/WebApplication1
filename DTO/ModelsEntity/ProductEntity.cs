@@ -18,6 +18,6 @@ namespace DataAccessLayer.ModelsEntity
         public string Image {  get; set; }
         [Column("category_id")]
         public ICollection<CategoryEntity> Categories { get; set; }
-        
+        public InstockEntity Instocks { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Interfaces;
-using Service.Models;
+using Service.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public Task<Cart> AddCart(Cart cart)
+        public Task<CartDTO> AddCart(CartDTO cart)
         {
             throw new NotImplementedException();
         }
@@ -30,17 +30,17 @@ namespace Service.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Cart>> GetAllCart()
+        public Task<IEnumerable<CartDTO>> GetAllCart()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Cart> GetCartById(int id)
+        public Task<CartDTO> GetCartById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCart(Cart cart)
+        public Task UpdateCart(CartDTO cart)
         {
             throw new NotImplementedException();
         }

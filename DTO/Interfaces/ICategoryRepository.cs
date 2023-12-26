@@ -4,10 +4,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface ICategoryRepository
     {
-        Task<IEnumerable<CategoryEntity>> GetCategoriesAsync();
-        Task<CategoryEntity> GetCategoryByIdAsync(int id);
-        Task AddCategoryAsync(CategoryEntity category);
-        Task UpdateCategoryAsync(CategoryEntity category);
-        Task DeleteCategoryAsync(int id);   
+        public List<CategoryEntity> GetCategories();
+        public CategoryEntity? GetCategoryById(int id);
+        public CategoryEntity? AddCategory(CategoryEntity category);
+        void UpdateCategory(CategoryEntity category);
+        void DeleteCategory(int id);   
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Interfaces;
-using Service.Models;
+using Service.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public Task<Order> AddOrder(Order order)
+        public Task<OrderDTO> AddOrder(OrderDTO order)
         {
             throw new NotImplementedException();
         }
@@ -30,17 +30,17 @@ namespace Service.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Order>> GetAllOrder()
+        public Task<IEnumerable<OrderDTO>> GetAllOrder()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Order> GetOrderById(int id)
+        public Task<OrderDTO> GetOrderById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateOrder(Order order)
+        public Task UpdateOrder(OrderDTO order)
         {
             throw new NotImplementedException();
         }

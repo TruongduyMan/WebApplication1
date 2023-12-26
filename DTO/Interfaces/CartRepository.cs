@@ -18,29 +18,35 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<CartEntity> AddCartAsync(CartEntity cart)
+        public CartEntity AddCart(CartEntity cart)
         {
-            throw new NotImplementedException();
+            _dbContext.Carts.Add(cart);
+            _dbContext.SaveChanges();
+            return cart;
         }
 
-        public Task DeleteCartAsync(int id)
+        public void DeleteCart(int id)
         {
-            throw new NotImplementedException();
+            var cart = _dbContext.Carts.FirstOrDefault(c => c.ID == id);
+            if(cart != null) { 
+                _dbContext.Carts.Remove(cart);
+                _dbContext.SaveChanges();
+            }
         }
 
-        public Task<CartEntity> GetCartByIdAsync(int id)
+        public CartEntity? GetCartById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Carts.FirstOrDefault(c => c.ID == id);   
         }
 
-        public async Task<IEnumerable<CartEntity>> GetCartsAsync()
+        public List<CartEntity> GetCarts()
         {
-            return await _dbContext.Carts.ToListAsync();
+            return _dbContext.Carts.ToList();
         }
 
-        public Task UpdateCartAsync(CartEntity cart)
+        public void UpdateCart(CartEntity cart)
         {
-            throw new NotImplementedException();
+            _dbContext.Carts.Add(cart);
         }
     }
 }

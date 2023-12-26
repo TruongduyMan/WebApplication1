@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Interfaces;
-using Service.Models;
+using DataAccessLayer.ModelsEntity;
+using Service.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,29 +21,37 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public Task<Product> AddProductByName(Product product)
+        public ProductDTO AddProduct(ProductDTO product)
         {
-            throw new NotImplementedException();
+            ProductEntity entity = _mapper.Map<ProductEntity>(product);
+            ProductEntity repository = _repository.AddProduct(entity);
+            ProductDTO action = _mapper.Map<ProductDTO>(repository);
+            return action;
         }
 
-        public Task DeleteProduct(int id)
+        public void DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            _repository.DeleteProduct(id);
         }
 
-        public Task<IEnumerable<Product>> GetAllProduct()
+        public List<ProductDTO> GetAllProduct()
         {
-            throw new NotImplementedException();
+            List<ProductEntity> list = _repository.GetProducts();  
+            List<ProductDTO> entities = _mapper.Map<List<ProductDTO>>(list);
+            return entities;
         }
 
-        public Task<Product> GetProductById(int id)
+        public ProductDTO GetProductById(int id)
         {
-            throw new NotImplementedException();
+            ProductEntity? product = _repository.GetProductById(id);
+            ProductDTO productDTO = _mapper.Map<ProductDTO>(product);
+            return productDTO;
         }
 
-        public Task UpdateProduct(Product product)
+        public void UpdateProduct(ProductDTO product)
         {
-            throw new NotImplementedException();
+            ProductEntity productEntity = _mapper.Map<ProductEntity>(product);
+            _repository.UpdateProduct(productEntity);
         }
     }
 }

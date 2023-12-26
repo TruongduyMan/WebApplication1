@@ -9,10 +9,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IInstockRepository
     {
-        Task<IEnumerable<InstockEntity>> GetInstocksAsync();
-        Task<InstockEntity> GetInstockByIdAsync(int id);
-        Task<InstockEntity> AddInstockAsync(InstockEntity instock);
-        Task UpdateInstockAsync(InstockEntity instock);
-        Task DeleteInstockAsync(int id);
+        public List<InstockEntity> GetInstocks();
+        public InstockEntity? GetInstockById(int id);
+        public InstockEntity? AddInstock(InstockEntity instock);
+        void UpdateInstock(InstockEntity instock);
+        void DeleteInstock(int id);
     }
 }

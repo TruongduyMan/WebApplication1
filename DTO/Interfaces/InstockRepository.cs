@@ -18,29 +18,36 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<InstockEntity> AddInstockAsync(InstockEntity instock)
+        public InstockEntity? AddInstock(InstockEntity instock)
         {
-            throw new NotImplementedException();
+            _dbContext.Instocks.Add(instock);
+            _dbContext.SaveChanges();
+            return instock;
         }
 
-        public Task DeleteInstockAsync(int id)
+        public void DeleteInstock(int id)
         {
-            throw new NotImplementedException();
+            var instock = _dbContext.Instocks.Find(id);
+            if(instock != null) { 
+            
+                _dbContext.Instocks.Remove(instock!);
+                _dbContext.SaveChanges();
+            }
         }
 
-        public Task<InstockEntity> GetInstockByIdAsync(int id)
+        public InstockEntity? GetInstockById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Instocks.FirstOrDefault(i => i.Id == id);
         }
 
-        public async Task<IEnumerable<InstockEntity>> GetInstocksAsync()
+        public List<InstockEntity> GetInstocks()
         {
-            return await _dbContext.Instocks.ToListAsync(); 
+            return _dbContext.Instocks.ToList();
         }
 
-        public Task UpdateInstockAsync(InstockEntity instock)
+        public void UpdateInstock(InstockEntity instock)
         {
-            throw new NotImplementedException();
+            _dbContext.Instocks.Update(instock);
         }
     }
 }

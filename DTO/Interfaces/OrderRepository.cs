@@ -18,29 +18,36 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<OrderEntity> AddOrderAsync(OrderEntity order)
+        public OrderEntity? AddOrder(OrderEntity order)
         {
-            throw new NotImplementedException();
+            _dbContext.Orders.Add(order);
+            _dbContext.SaveChanges();
+            return order;
         }
 
-        public Task DeleteOrderAsync(int id)
+        public void DeleteOrder(int id)
         {
-            throw new NotImplementedException();
+            var order = _dbContext.Orders.Find(id);
+            if(order != null)
+            {
+              _dbContext.Orders.Remove(order!);
+              _dbContext.SaveChanges();
+            }
         }
 
-        public async Task<IEnumerable<OrderEntity>> GetAllOrdersAsync()
+        public List<OrderEntity> GetAllOrders()
         {
-            return await _dbContext.Orders.ToListAsync();
+            return _dbContext.Orders.ToList();
         }
 
-        public Task<OrderEntity> GetOrderByIdAsync(int id)
+        public OrderEntity? GetOrderById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Orders.FirstOrDefault(x => x.ID == id);
         }
 
-        public Task UpdateOrderAsync(OrderEntity order)
+        public void UpdateOrder(OrderEntity order)
         {
-            throw new NotImplementedException();
+            _dbContext.Orders.Update(order);
         }
     }
 }

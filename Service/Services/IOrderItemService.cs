@@ -1,13 +1,13 @@
-﻿using Service.Models;
+﻿using Service.ModelsDTO;
 
 namespace Service.Services
 {
     public interface IOrderItemService
     {
-        Task<IEnumerable<OrderItem>> GetAllOrderItem();
-        Task<OrderItem> GetOrderItemById(int id);
-        Task<OrderItem> AddOrderItem(OrderItem orderItem);
-        Task UpdateOrderItem(OrderItem orderItem);
+        Task<IEnumerable<OrderItemDTO>> GetAllOrderItem();
+        Task<OrderItemDTO> GetOrderItemById(int id);
+        Task<OrderItemDTO> AddOrderItem(OrderItemDTO orderItem);
+        Task UpdateOrderItem(OrderItemDTO orderItem);
         Task DeleteOrderItem(int id);
 
     }

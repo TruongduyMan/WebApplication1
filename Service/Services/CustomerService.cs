@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Interfaces;
-using Service.Models;
+using DataAccessLayer.ModelsEntity;
+using Service.ModelsDTO;
 
 namespace Service.Services
 {
@@ -15,29 +16,40 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public Task<Customer> AddCustomer(Customer customer)
+        public CustomerDTO? AddCustomer(CustomerDTO customer)
         {
-            throw new NotImplementedException();
+            CustomerEntity entity = _mapper.Map<CustomerEntity>(customer);
+            CustomerEntity repository = _repository.AddCustomer(entity);
+            CustomerDTO action = _mapper.Map<CustomerDTO>(repository);
+            return action;
         }
 
-        public Task DeleteCustomer(int id)
+        public void DeleteCustomer(int id)
         {
-            return _repository.DeleleCustomerAsync(id);
+            _repository.GetCustomerById(id);
+            _repository.DeleteCustomer(id); 
         }
 
-        public Task<IEnumerable<Customer>> GetAllCustomer()
+        public List<CustomerDTO> GetAllCustomer()
         {
-            throw new NotImplementedException();
+            List<CustomerEntity> list = _repository.GetCustomers();
+            List<CustomerDTO> entities = _mapper.Map<List<CustomerDTO>>(list);
+            return entities;
+
         }
 
-        public Task<Customer> GetCustomerById(int id)
+        public CustomerDTO? GetCustomerById(int id)
         {
-            throw new NotImplementedException();
+            CustomerEntity? entity = _repository.GetCustomerById(id);
+            CustomerDTO customer = _mapper.Map<CustomerDTO>(entity);
+            return customer;
         }
 
-        public Task UpdateCustomer(Customer customer)
+        public void UpdateCustomer(CustomerDTO customer)
         {
-            throw new NotImplementedException();
+            CustomerEntity request = _mapper.Map<CustomerEntity>(customer);
+            _repository.UpdateCustomer(request); 
         }
+
     }
 }

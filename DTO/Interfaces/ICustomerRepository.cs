@@ -4,11 +4,11 @@ namespace DataAccessLayer.Interfaces
 {
     public interface ICustomerRepository
     {
-        Task<IEnumerable<CustomerEntity>> GetCustomersAsync();
-        Task<CustomerEntity> GetCustomerByIdAsync(int id);
-        Task<CustomerEntity> AddCustomerAsync(CustomerEntity customer);
-        Task UpdateCustomerAsync(CustomerEntity customer);
-        Task DeleleCustomerAsync(int id);
+        public List<CustomerEntity> GetCustomers();
+        public CustomerEntity? GetCustomerById(int id);
+        public CustomerEntity? AddCustomer(CustomerEntity customer);
+        void UpdateCustomer(CustomerEntity customer);
+        void DeleteCustomer(int id);
 
     }
 }

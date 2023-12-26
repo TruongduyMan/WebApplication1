@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Data;
 using DataAccessLayer.ModelsEntity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Interfaces
@@ -13,29 +14,36 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task<CustomerEntity> AddCustomerAsync(CustomerEntity customer)
+        public CustomerEntity AddCustomer(CustomerEntity customer)
         {
-            throw new NotImplementedException();
+            _dbContext.Customers.Add(customer);
+            _dbContext.SaveChanges();
+            return customer;
         }
 
-        public Task DeleleCustomerAsync(int id)
+        public void DeleteCustomer(int id)
         {
-            throw new NotImplementedException();
+            var customer = _dbContext.Customers.FirstOrDefault(c => c.ID == id);
+            if(customer != null)
+            {
+                _dbContext.Customers.Remove(customer);
+                _dbContext.SaveChanges(true);
+            }
         }
 
-        public Task<CustomerEntity> GetCustomerByIdAsync(int id)
+        public CustomerEntity? GetCustomerById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Customers.FirstOrDefault(c => c.ID == id);
         }
 
-        public async Task<IEnumerable<CustomerEntity>> GetCustomersAsync()
+        public List<CustomerEntity> GetCustomers()
         {
-            return await _dbContext.Customers.ToListAsync();
+            return _dbContext.Customers.ToList();
         }
 
-        public Task UpdateCustomerAsync(CustomerEntity customer)
+        public void UpdateCustomer(CustomerEntity customer)
         {
-            throw new NotImplementedException();
+            _dbContext.Customers.Update(customer);
         }
     }
 

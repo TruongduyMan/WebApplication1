@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Interfaces;
-using Service.Models;
+using Service.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public Task<Instock> AddInstock(Instock instock)
+        public Task<InstockDTO> AddInstock(InstockDTO instock)
         {
             throw new NotImplementedException();
         }
@@ -30,17 +30,17 @@ namespace Service.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Instock>> GetAllInstock()
+        public Task<IEnumerable<InstockDTO>> GetAllInstock()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Instock> GetInstockById(int id)
+        public Task<InstockDTO> GetInstockById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateInstock(Instock instock)
+        public Task UpdateInstock(InstockDTO instock)
         {
             throw new NotImplementedException();
         }

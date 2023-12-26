@@ -16,7 +16,7 @@ namespace DataAccessLayer.ModelsEntity
         [Column("total")]
         public decimal Total {  get; set; }
         [Column("customer_id")]
-        public ICollection<CustomerEntity> customer { get; set; }
+        public CustomerEntity Customer { get; set; }
 
         
     }

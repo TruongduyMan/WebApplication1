@@ -1,13 +1,13 @@
-﻿using Service.Models;
+﻿using Service.ModelsDTO;
 
 namespace Service.Services
 {
     public interface ICartService
     {
-        Task<IEnumerable<Cart>> GetAllCart();
-        Task<Cart> GetCartById(int id);
-        Task<Cart> AddCart(Cart cart);
-        Task UpdateCart(Cart cart);
+        Task<IEnumerable<CartDTO>> GetAllCart();
+        Task<CartDTO> GetCartById(int id);
+        Task<CartDTO> AddCart(CartDTO cart);
+        Task UpdateCart(CartDTO cart);
         Task DeleteCart(int id);
 
     }

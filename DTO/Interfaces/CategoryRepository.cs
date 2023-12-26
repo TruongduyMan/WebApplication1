@@ -13,29 +13,37 @@ namespace DataAccessLayer.Interfaces
             _dbContext = dbContext;
         }
 
-        public Task AddCategoryAsync(CategoryEntity category)
+        public CategoryEntity? AddCategory(CategoryEntity category)
         {
-            throw new NotImplementedException();
+            _dbContext.Categories.Add(category);
+            _dbContext.SaveChanges();
+            return category;
         }
 
-        public Task DeleteCategoryAsync(int id)
+        public void DeleteCategory(int id)
         {
-            throw new NotImplementedException();
+            var category = _dbContext.Categories.Find(id);
+            if (category != null)
+            {
+                _dbContext.Categories.Remove(category!);
+                _dbContext.SaveChanges();
+            
+            }
         }
 
-        public async Task<IEnumerable<CategoryEntity>> GetCategoriesAsync()
+        public List<CategoryEntity> GetCategories()
         {
-            return await _dbContext.Categories.ToListAsync();
+            return _dbContext.Categories.ToList();
         }
 
-        public Task<CategoryEntity> GetCategoryByIdAsync(int id)
+        public CategoryEntity? GetCategoryById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Categories.FirstOrDefault(x => x.Id == id);
         }
 
-        public Task UpdateCategoryAsync(CategoryEntity category)
+        public void UpdateCategory(CategoryEntity category)
         {
-            throw new NotImplementedException();
+            _dbContext.Categories.Update(category);
         }
     }
 

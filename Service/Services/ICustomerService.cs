@@ -1,14 +1,16 @@
-﻿using Service.Models;
+﻿
+using Service.ModelsDTO;
+
 
 namespace Service.Services
 {
     public interface ICustomerService
     {
-        Task<IEnumerable<Customer>> GetAllCustomer();
-        Task<Customer> GetCustomerById(int id);
-        Task<Customer> AddCustomer(Customer customer);
-        Task UpdateCustomer(Customer customer);
-        Task DeleteCustomer(int id);
+        public List<CustomerDTO> GetAllCustomer();
+        public CustomerDTO? GetCustomerById(int id);
+        public CustomerDTO? AddCustomer(CustomerDTO customer);
+        void UpdateCustomer(CustomerDTO customer);
+        void DeleteCustomer(int id);
 
     }
 }

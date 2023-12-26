@@ -9,10 +9,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IOrderRepository
     {
-        Task<IEnumerable<OrderEntity>> GetAllOrdersAsync();
-        Task<OrderEntity> GetOrderByIdAsync(int id);
-        Task<OrderEntity> AddOrderAsync(OrderEntity order);
-        Task DeleteOrderAsync(int id);
-        Task UpdateOrderAsync(OrderEntity order);
+        public List<OrderEntity> GetAllOrders();
+        public OrderEntity? GetOrderById(int id);
+        public OrderEntity? AddOrder(OrderEntity order);
+        void DeleteOrder(int id);
+        void UpdateOrder(OrderEntity order);
     }
 }

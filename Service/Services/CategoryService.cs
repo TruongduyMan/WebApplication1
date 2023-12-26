@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Interfaces;
-using Service.Models;
+using Service.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public Task<Category> AddCategory(Category category)
+        public Task<CategoryDTO> AddCategory(CategoryDTO category)
         {
             throw new NotImplementedException();
         }
@@ -30,17 +30,17 @@ namespace Service.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Category>> GetAllCategory()
+        public Task<IEnumerable<CategoryDTO>> GetAllCategory()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Category> GetCategoryById(int id)
+        public Task<CategoryDTO> GetCategoryById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCategory(Category category)
+        public Task UpdateCategory(CategoryDTO category)
         {
             throw new NotImplementedException();
         }
