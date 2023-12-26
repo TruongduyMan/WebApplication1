@@ -1,7 +1,9 @@
 using DataAccessLayer.Data;
 using DataAccessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Service.Services;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(
- @"Server=desktop-n5np89i; Database=KeebCap; User Id=sa; Password=duyman123; Trusted_Connection=True"
+builder.Services.AddDbContext<ApplicationDbContext>(option =>
+option.UseSqlServer("Server=desktop-n5np89i; Database=KeebCap; User Id=sa; Password=duyman123; TrustServerCertificate=true;"
  ));
 
 // Register auto mapper
